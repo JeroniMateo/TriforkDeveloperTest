@@ -27,3 +27,6 @@ div#Username{
     display: flex;
     justify-content: center;
 }
+small{
+    color: gray;
+}

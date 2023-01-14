@@ -92,3 +92,29 @@ so to know how many repos we have we want to know how long is it, where every po
 
 /**If we have the array of the git hub organizations, to know how many they are, we have to do the same as we do on the first TODO; 
  * we want to know the length of the array where every position of the array is 1 oranization */
+
+
+
+fetch('https://api.github.com/organizations', {
+  headers: {
+    Accept: 'application/vnd.github.v3+json',
+    Authorization: `token ${token}`
+  }
+})
+.then((response) => response.json()) //Converting the response to a JSON object
+/* The Data that we have when we make the fetch is an array, 
+so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
+.then((data) => {
+    console.log(data)
+    const root = document.querySelector('#BiggestRepo')
+    
+    root.innerHTML = ` 
+    
+    <p><label>Biggest Repo:</label> ${data.name} <small>bytes</small></p>
+    
+    `
+
+    
+  })
+  
+  .catch((error) => console.error(error))
