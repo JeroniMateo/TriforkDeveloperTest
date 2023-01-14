@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="GithubRepos.css">
+    <link rel="stylesheet" href="GithubRepos.css" />
     <title>Document</title>
   </head>
   <body>
-    <div id="OctokitRequests"></div>
-    <div id="Username"></div>
-    <div id="Repos">
-      <div id="ReposNum"></div>
-      <ul id="ReposList"></ul>
-
+    <div id="GithubApi">
+      <h1 id="Username"></h1>
+      <div id="Repos">
+        <h2 id="ReposNum"></h2>
+        <ul id="ReposList"></ul>
+      </div>
+      <div id="BiggestRepo"></div>
+      <div id="GitOrganization">
+        <h2 id="OrganizationsNum"></h2>
+        <ul id="OrganizationsList"></ul>
+      </div>
     </div>
-    <div id="BiggestRepo"></div>
-    <div id="GitOrganization"></div>
   </body>
   <script src="GitHubApi.js"></script>
   <script src="Octokit.js"></script>

@@ -72,13 +72,18 @@ so to know how many repos we have we want to know how long is it, where every po
   so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
   .then((data) => {
       console.log(data)
-      const root = document.querySelector('#BiggestRepo')
+      const root = document.querySelector('#OrganizationsNum')
       
       root.innerHTML = ` 
       
       <p><label>Number of Organizations:</label> ${data.length}</p>
       
       `
+
+      for (let i = 0; i < data.length; i++) {
+        document.getElementById('OrganizationsList').innerHTML += `<li>${data[i].login}</li>`;
+        
+      }
     })
     
     .catch((error) => console.error(error))
