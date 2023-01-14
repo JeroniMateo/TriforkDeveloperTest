@@ -46,8 +46,6 @@ so to know how many repos we have we want to know how long is it, becouse every 
     root.innerHTML = ` 
     
     <p><label>Number of Repositories:</label> ${data.length}</p>
-    <p><label>Git Organization:</label> ${data.repositories}</p>
-    
     `
   })
   
@@ -72,8 +70,7 @@ so to know how many repos we have we want to know how long is it, becouse every 
     
     root.innerHTML = ` 
     
-    <p><label>Number of Repositories:</label> ${data.length}</p>
-    <p><label>Git Organization:</label> ${data.repositories}</p>
+    <p><label>Number of organizations:</label> ${data.length}</p>
     
     `
   })
