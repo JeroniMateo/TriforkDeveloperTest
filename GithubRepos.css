@@ -30,3 +30,7 @@ div#Username{
 small{
     color: gray;
 }
+p#OrganizationsList{
+    color: rgb(8, 71, 243);
+    font-size: 3vh;
+}

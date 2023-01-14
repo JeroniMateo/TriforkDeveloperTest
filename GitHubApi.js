@@ -1,3 +1,9 @@
+/**The user choose on the input select one of the GitHub organizatins */
+document.getElementById('OrganizationsSelect').innerHTML += `
+<option value="${organization}">${organization}</option>
+      
+      `
+
 /* /We create a fetch of our github acount where we get the data off all inside
 We can get the repos we have, our name, followers among others.
 */
@@ -101,9 +107,11 @@ so to know how many repos we have we want to know how long is it, becouse every 
   for (let i = 0; i < data.length; i++) {
     document.getElementById(
       'OrganizationsList'
-      ).innerHTML += `<a href='${data[i].url}'><li>${data[i].login}</li></a>`
+      ).innerHTML += `${data[i].login}  `
     }
   })
   
   .catch((error) => console.error(error))
   
+
+
