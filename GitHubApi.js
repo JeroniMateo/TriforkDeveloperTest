@@ -47,7 +47,7 @@ so to know how many repos we have we want to know how long is it, where every po
 
     
   for (let i = 0; i < data.length; i++) {
-    document.getElementById('ReposList').innerHTML += `<li>${data[i].name}</li>`;
+    document.getElementById('ReposList').innerHTML += `<a href='${data[i].url}'><li>${data[i].name}</li></a>`;
     
   }
     
@@ -81,7 +81,7 @@ so to know how many repos we have we want to know how long is it, where every po
       `
 
       for (let i = 0; i < data.length; i++) {
-        document.getElementById('OrganizationsList').innerHTML += `<li>${data[i].login}</li>`;
+        document.getElementById('OrganizationsList').innerHTML += `<a href='${data[i].url}'><li>${data[i].login}</li></a>`;
         
       }
     })
