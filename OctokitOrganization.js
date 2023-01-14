@@ -41,7 +41,7 @@ fetch('https://api.github.com/user/repos', {
 so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
 .then((data) => {
     console.log(data)
-    const root = document.querySelector('#GitOrganization')
+    const root = document.querySelector('#ReposNum')
     
     root.innerHTML = ` 
     
@@ -56,5 +56,28 @@ so to know how many repos we have we want to know how long is it, becouse every 
   // Init - Contains request body and headers and other configurations such as the request method.
   
   // TODO: 2. Given an organization return the biggest repository (in bytes).
+
+  fetch('https://api.github.com/organizations', {
+  headers: {
+    Accept: 'application/vnd.github.v3+json',
+    Authorization: `token ${token}`
+  }
+})
+.then((response) => response.json()) //Converting the response to a JSON object
+/* The Data that we have when we make the fetch is an array, 
+so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
+.then((data) => {
+    console.log(data)
+    const root = document.querySelector('#GitOrganization')
+    
+    root.innerHTML = ` 
+    
+    <p><label>Number of Repositories:</label> ${data.length}</p>
+    <p><label>Git Organization:</label> ${data.repositories}</p>
+    
+    `
+  })
+  
+  .catch((error) => console.error(error))
   
   // TODO: 3. Return the number of organizations that are currently on Github.
