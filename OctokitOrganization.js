@@ -16,10 +16,6 @@ fetch('https://api.github.com/users/JeroniMateo', {
   root.innerHTML = ` 
   
   <a href=${data.html_url}> ${data.name}</a>
-  
-  <p><label>Followers:</label> ${data.followers}</p>
-  
-  
   `
 })
 
@@ -38,7 +34,7 @@ fetch('https://api.github.com/user/repos', {
 })
 .then((response) => response.json()) //Converting the response to a JSON object
 /* The Data that we have when we make the fetch is an array, 
-so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
+so to know how many repos we have we want to know how long is it, where every position of the array is 1 repo */
 .then((data) => {
     console.log(data)
     const root = document.querySelector('#ReposNum')
@@ -55,26 +51,30 @@ so to know how many repos we have we want to know how long is it, becouse every 
   
   // TODO: 2. Given an organization return the biggest repository (in bytes).
 
-  fetch('https://api.github.com/organizations', {
-  headers: {
-    Accept: 'application/vnd.github.v3+json',
-    Authorization: `token ${token}`
-  }
-})
-.then((response) => response.json()) //Converting the response to a JSON object
-/* The Data that we have when we make the fetch is an array, 
-so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
-.then((data) => {
-    console.log(data)
-    const root = document.querySelector('#GitOrganization')
-    
-    root.innerHTML = ` 
-    
-    <p><label>Number of organizations:</label> ${data.length}</p>
-    
-    `
-  })
-  
-  .catch((error) => console.error(error))
   
   // TODO: 3. Return the number of organizations that are currently on Github.
+
+/**If we have the array of the git hub organizations, to know how many they are, we have to do the same as we do on the first TODO; 
+ * we want to know the length of the array where every position of the array is 1 oranization */
+
+  fetch('https://api.github.com/organizations', {
+    headers: {
+      Accept: 'application/vnd.github.v3+json',
+      Authorization: `token ${token}`
+    }
+  })
+  .then((response) => response.json()) //Converting the response to a JSON object
+  /* The Data that we have when we make the fetch is an array, 
+  so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
+  .then((data) => {
+      console.log(data)
+      const root = document.querySelector('#GitOrganization')
+      
+      root.innerHTML = ` 
+      
+      <p><label>Number of organizations:</label> ${data.length}</p>
+      
+      `
+    })
+    
+    .catch((error) => console.error(error))
