@@ -26,7 +26,8 @@ fetch('https://api.github.com/users/JeroniMateo', {
 /* Then we create an other fetch of our repositories to get the data that we need */
 
 let token = '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'
-fetch('https://api.github.com/user/repos', {
+const repos ="https://api.github.com/user/repos"
+fetch(repos, {
   headers: {
     Accept: 'application/vnd.github.v3+json',
     Authorization: `token ${token}`
@@ -43,6 +44,14 @@ so to know how many repos we have we want to know how long is it, where every po
     
     <p><label>Number of Repositories:</label> ${data.length}</p>
     `
+
+    
+  for (let i = 0; i < data.length; i++) {
+    document.getElementById('ReposList').innerHTML += `<li>${data[i].name}</li>`;
+    
+  }
+    
+
   })
   
   .catch((error) => console.error(error))
@@ -78,25 +87,3 @@ so to know how many repos we have we want to know how long is it, where every po
 
 /**If we have the array of the git hub organizations, to know how many they are, we have to do the same as we do on the first TODO; 
  * we want to know the length of the array where every position of the array is 1 oranization */
-
-  fetch(' https://api.github.com/repos/{owner}/{repo}/contents/{path}{?ref}', {
-    headers: {
-      Accept: 'application/vnd.github.v3+json',
-      Authorization: `token ${token}`
-    }
-  })
-  .then((response) => response.json()) //Converting the response to a JSON object
-  /* The Data that we have when we make the fetch is an array, 
-  so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
-  .then((data) => {
-      console.log(data)
-      const root = document.querySelector('#GitOrganization')
-      
-      root.innerHTML = ` 
-      
-      <p><label>Biggest Repository:</label> ${data.length} <small>bytes</small></p>
-      
-      `
-    })
-    
-    .catch((error) => console.error(error))
