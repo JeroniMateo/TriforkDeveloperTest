@@ -8,7 +8,7 @@ We can get the repos we have, our name, followers among others.
 /* Then we create an other fetch of our repositories to get the data that we need */
 
 let token = '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'
-const repos = 'https://api.github.com/user/repos'
+const repos = 'https://api.github.com/orgs/errfree/repos'
 fetch(repos, {
   headers: {
     Accept: 'application/vnd.github.v3+json',
@@ -27,11 +27,7 @@ so to know how many repos we have we want to know how long is it, where every po
     <p><label>Number of Repositories:</label> ${data.length}</p>
     `
 
-    for (let i = 0; i < data.length; i++) {
-      document.getElementById(
-        'ReposList'
-      ).innerHTML += `<a href='${data[i].url}'><li>${data[i].name}</li></a>`
-    }
+   
   })
 
   .catch((error) => console.error(error))
@@ -62,7 +58,7 @@ so to know how many repos we have we want to know how long is it, where every po
      ReposSyze.push(data[i].size)
       
     }
-    
+    console.log(ReposSyze)
     
       root.innerHTML += ` 
       <p><label>Biggest Repo:</label> ${ReposSyze.max()} <small>bytes</small></p>
