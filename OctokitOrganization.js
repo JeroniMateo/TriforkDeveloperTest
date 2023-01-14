@@ -37,14 +37,13 @@ fetch('https://api.github.com/user/repos', {
   }
 })
 .then((response) => response.json()) //Converting the response to a JSON object
-
+/* The Data that we have when we make the fetch is an array, 
+so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
 .then((data) => {
     console.log(data)
     const root = document.querySelector('#GitOrganization')
     
     root.innerHTML = ` 
-    
-    
     
     <p><label>Number of Repositories:</label> ${data.length}</p>
     <p><label>Git Organization:</label> ${data.repositories}</p>
