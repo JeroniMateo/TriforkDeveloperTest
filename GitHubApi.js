@@ -60,9 +60,16 @@ so to know how many repos we have we want to know how long is it, where every po
   so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
   .then((data) => {
     console.log(data)
+    const SizesArray =[];
     
+    for (let i = 0; i < data.length; i++) {
+        SizesArray.push(data[i].size); 
+      
+    }
    
-    
+    console.log(SizesArray)
+    document.getElementById('BiggestRepo').innerHTML = `
+    <label>Biggest Repo: </label> <p>${SizesArray.reduce((prev, current) => (prev.y > current.y) ? prev : current)}<small>bytes</small></p>`
   })
   .catch((error) => console.error(error))
   
