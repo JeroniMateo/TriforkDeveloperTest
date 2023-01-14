@@ -79,7 +79,7 @@ so to know how many repos we have we want to know how long is it, where every po
 /**If we have the array of the git hub organizations, to know how many they are, we have to do the same as we do on the first TODO; 
  * we want to know the length of the array where every position of the array is 1 oranization */
 
-  fetch('https://api.github.com/user/repos?size', {
+  fetch(' https://api.github.com/repos/{owner}/{repo}/contents/{path}{?ref}', {
     headers: {
       Accept: 'application/vnd.github.v3+json',
       Authorization: `token ${token}`
@@ -94,7 +94,7 @@ so to know how many repos we have we want to know how long is it, where every po
       
       root.innerHTML = ` 
       
-      <p><label>Biggest Repository:</label> ${data.length}</p>
+      <p><label>Biggest Repository:</label> ${data.length} <small>bytes</small></p>
       
       `
     })
