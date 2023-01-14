@@ -24,7 +24,9 @@ li{
 small{
     color: gray;
 }
-p#OrganizationsList{
-    color: rgb(8, 71, 243);
+#OrganizationsList{
+    color: rgb(16, 8, 243);
     font-size: 3vh;
+    width: 120vh;
 }
+
