@@ -1,13 +1,28 @@
 a{
-    font-size: 5vh;
+    font-size: 7vh;
     font-weight: bold;
     color: #151567;
 }
 p{
-    font-size: 3vh;
+    font-size: 4vh;
+    color:#0f0fc0
 }
 label{
-    font-size: 3vh;
+    font-size: 4vh;
     color: rgb(21, 17, 17);
     font-weight: bold;
+}
+
+div#GithubApi{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+li{
+    font-size: 3vh;
+}
+
+div#Username{
+    display: flex;
+    justify-content: center;
 }
