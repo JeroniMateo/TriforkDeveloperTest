@@ -59,7 +59,6 @@ so to know how many repos we have we want to know how long is it, where every po
   /* The Data that we have when we make the fetch is an array, 
   so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
   .then((data) => {
-    console.log(data)
     const SizesArray =[];
     
     for (let i = 0; i < data.length; i++) {
@@ -67,9 +66,9 @@ so to know how many repos we have we want to know how long is it, where every po
       
     }
    
-    console.log(SizesArray)
+    
     document.getElementById('BiggestRepo').innerHTML = `
-    <label>Biggest Repo: </label> <p>${SizesArray.reduce((prev, current) => (prev.y > current.y) ? prev : current)}<small>bytes</small></p>`
+    <p><label>Biggest Repo: </label> ${SizesArray.reduce((prev, current) => (prev.y > current.y) ? prev : current)}<small> bytes</small></p>`
   })
   .catch((error) => console.error(error))
   
@@ -90,7 +89,7 @@ so to know how many repos we have we want to know how long is it, where every po
   /* The Data that we have when we make the fetch is an array, 
 so to know how many repos we have we want to know how long is it, becouse every position of the array is 1 repo */
 .then((data) => {
-  console.log(data)
+  
   const root = document.querySelector('#OrganizationsNum')
   
   root.innerHTML = ` 
