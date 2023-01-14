@@ -3,14 +3,15 @@ let token = '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'
 /**The user choose on the input select one of the GitHub organizatins */
 document.getElementById('OrgazinationInput').innerHTML += `
 <option value="${organization}">${organization}</option>
-      
-      `
+
+`
 
 /* /We create a fetch of our github acount where we get the data off all inside
 We can get the repos we have, our name, followers among others.
 */
 
 function getOrganization() {
+  let organization = document.getElementById('OrgazinationInput').value;
   
   // TODO: 1. Given an organization return the number of repositories.
   

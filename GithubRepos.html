@@ -8,20 +8,27 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="text" name="Organization" id="OrgazinationInput" placeholder="Organization"> <button onclick="getOrganization()">Click me</button> 
-    <h1>Choose one of this organizations </h1>
+    <div id="gitHubApi">
       <div id="OrganizationsNum"></div>
+      <h1>Choose one of this organizations</h1>
       <div id="OrganizationsList"></div>
-    
+      <br />
+      <input
+        type="text"
+        name="Organization"
+        id="OrgazinationInput"
+        placeholder="Organization"
+      />
+      <button onclick="getOrganization()">Choose</button>
 
-    <div id="GithubApi">
-      <div id="Repos">
-        <div id="ReposNum"></div>
-        <ul id="ReposList"></ul>
+      <div id="GithubApi">
+        <div id="Repos">
+          <div id="ReposNum"></div>
+          <ul id="ReposList"></ul>
+        </div>
+        <div id="BiggestRepo"></div>
       </div>
-      <div id="BiggestRepo"></div>
     </div>
   </body>
   <script src="GitHubApi.js"></script>
-  
 </html>
