@@ -1,48 +1,59 @@
-div#gitHubApi{
-    margin: 1%;
+div#gitHubApi {
+  margin: 1%;
 }
 
-#OrganizationsList{
-    color: #1f4736;
-    font-size: 3vh;
-    width: 120vh;
+#OrganizationsList {
+  color: #1f4736;
+  font-size: 3vh;
+  width: 120vh;
 }
 
-a{
-    font-size: 7vh;
-    font-weight: bold;
-    color: #033f03;
+a {
+  font-size: 7vh;
+  font-weight: bold;
+  color: #033f03;
 }
 
-p{
-    font-size: 4vh;
-    color:#093975;
-    font-weight: bold;
+p {
+  font-size: 4vh;
+  color: #093975;
+  font-weight: bold;
 }
 
-label{
-    font-size: 4vh;
-    color: rgb(21, 17, 17);
-    font-weight: bold;
+label {
+  font-size: 4vh;
+  color: rgb(21, 17, 17);
+  font-weight: bold;
 }
 
-h1#GitHubOrgsApi{
-    font-size: 5vh;
-    color: #060334;
-    display: flex;
-    justify-items: center;
+h1#GitHubOrgsApi {
+  font-size: 5vh;
+  color: #060334;
+  display: flex;
+  justify-items: center;
 }
 
-li{
-    font-size: 3vh;
-    color:#1d1d5a;
+li {
+  font-size: 3vh;
+  color: #1d1d5a;
 }
 
-
-small{
-    color: rgb(37, 31, 31);
+small {
+  color: rgb(37, 31, 31);
 }
-img{
-    height: 8vh;
-    width: 10vh;
+img {
+  height: 8vh;
+  width: 10vh;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2vh;
+  border-radius: 10%;
 }
