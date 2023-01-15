@@ -1,17 +1,14 @@
-let organization = document.getElementById('OrgazinationInput').value;
+let organization = document.getElementById('OrganizationsListSelect').value;
 let token = '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'
 /**The user choose on the input select one of the GitHub organizatins */
-document.getElementById('OrgazinationInput').innerHTML += `
-<option value="${organization}">${organization}</option>
 
-`
 
 /* /We create a fetch of our github acount where we get the data off all inside
 We can get the repos we have, our name, followers among others.
 */
 
 function getOrganization() {
-  let organization = document.getElementById('OrgazinationInput').value;
+  let organization = document.getElementById('OrganizationsListSelect').value;
   
   // TODO: 1. Given an organization return the number of repositories.
   
@@ -100,7 +97,7 @@ fetch(repos, {
     `
     
     for (let i = 0; i < data.length; i++) {
-      document.getElementById('OrganizationsList').innerHTML +=`${data[i].login} ,`
+      document.getElementById('OrganizationsListSelect').innerHTML +=`<option value="${data[i].login}">${data[i].login}</option>`
       
     }
   })
